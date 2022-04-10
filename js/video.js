@@ -54,11 +54,11 @@ document.querySelector("#mute").addEventListener("click", function(){
 
 document.querySelector("#slider").addEventListener("change", function(){
 	var slider = document.querySelector("#slider");
-	console.log("Volume Slider");
+	// console.log("Volume Slider");
 	if (slider.value < 100) {
 		video.volume = slider.value / 100; 
 		document.getElementById("volume").textContent = slider.value + "%";
-		console.log("Volume of the video is ", slider.value)
+		console.log(video.volume)
 	}
 });
 
