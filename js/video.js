@@ -39,23 +39,22 @@ document.querySelector("#skip").addEventListener("click", function(){
 
 document.querySelector("#mute").addEventListener("click", function(){
 	var btn = document.getElementById("mute");
-	if (btn.value == "Mute") {
-		console.log("Mute Video");
+	if (btn.innerText == "Mute") {
 		video.muted = true;
-		btn.value == "Unmute";
-		return;
+		console.log("Mute Video");
+		btn.innerText = "Unmute";
 	}
 	else {
-		console.log("Unmute Video");
+		
 		video.muted = false;
-		btn.value == "Mute";
-		return;
+		console.log("Unmute Video");
+		btn.innerText = "Mute";
 	}
 });
 
 document.querySelector("#slider").addEventListener("change", function(){
 	var slider = document.querySelector("#slider");
-	console.log("Slider volume slider");
+	console.log("Volume Slider");
 	if (slider.value < 100) {
 		video.volume = slider.value / 100; 
 		document.getElementById("volume").textContent = slider.value + "%";
