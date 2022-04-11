@@ -52,22 +52,18 @@ document.querySelector("#mute").addEventListener("click", function(){
 	}
 });
 
-document.querySelector("#slider").addEventListener("change", function(){
-	var slider = document.querySelector("#slider");
-	// console.log("Volume Slider");
-	if (slider.value < 100) {
-		video.volume = slider.value / 100; 
-		document.getElementById("volume").textContent = slider.value + "%";
-		console.log(video.volume)
-	}
+document.querySelector("#slider").addEventListener("input", (e) => {
+	video.volume = e.currentTarget.value / 100;
+	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
+	console.log(video.volume);
 });
 
 document.querySelector("#vintage").addEventListener("click", function(){
-	console.log("Old School Video");
 	video.className = "oldSchool";
+	console.log("Old School Video");
 });
 
 document.querySelector("#orig").addEventListener("click", function(){
-	console.log("Original Video");
 	video.className = "video";
+	console.log("Original Video");
 });
